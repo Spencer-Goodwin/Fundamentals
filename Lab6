@@ -30,7 +30,6 @@ string greedyStrategy(const char *file, size_t lineLength = 30) {
 
 int main() {
 	cout << "Greedy Strategy at 30: \n" << greedyStrategy(file) << "\n\n";
-	cout << "Greedy Strategy at 80: \n" << greedyStrategy(file, 80) << "\n\n";
 	system("pause");
 	return 0;
 }
