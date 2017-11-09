@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+string sequence(int n) {
+	if(n == 1)
+		return "1";
+	if(n == 2)
+		return "11";
+	string myString = "11";
+	for (int i = 3; i <= n; i++) {
+		myString += '$';
+		int length = myString.length();
+		int count = 1;
+		string  temp = "";
+		for (int j = 1; j < length; j++) {
+			if(myString[j] != myString[j - 1]) {
+				temp += count + '0';
+				temp += myString[j - 1];
+				count = 1;
+			}
+			else count++;
+		}
+		myString = temp;
+	}
+	return myString;
+}
+void Random(int arr[]) {
+	srand((unsigned)time(NULL));
+	for (int i = 5; i < 15; i++) {
+		arr[i] = 1 + rand() % 10 + 5;
+	}
+}
+int main() {
+	int num;
+	while(num < 9) {
+		cout << Random;
+		cout << sequence(num) << endl;
+		num++;
+	}
+	return 0;
+}
